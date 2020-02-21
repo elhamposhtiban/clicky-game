@@ -3,10 +3,7 @@ import throneData from "./throne.json";
 import ThroneFile from "./components/ThroneFile";
 import Wrapper from "./components/Wrapper";
 import Jumbotron from "./components/Jumbotron";
-// import {
-//   Wrapper,
-//   MinionFile
-// } from "./components";
+
 
 const App = () => {
 
@@ -14,7 +11,7 @@ const App = () => {
   let [count, setCount] = useState(0);
   let [prevScore, setprevScore] = useState(0);
   const [lastId, setlastId] = useState([]);
-  const [clicked, setclicked] = useState(false)
+
 
 // on click function which handle increasing score and random characters 
   const handleClickItem = (id) =>  {
@@ -24,8 +21,8 @@ const App = () => {
     if (lastId.includes(id)) {
 
       console.log("yes it is working ")
-      gameOver()
-      return
+      
+      return gameOver()
 
     } else {
 
@@ -38,38 +35,6 @@ const App = () => {
     
     }
 
-//     if (thrones.includes(id)) {
-//   console.log(`ID ${id}`)
-//   const result = !((thrones.includes(id)))
-//   console.log (`this is a result of ${result}`)
-//   count++ ;
-//   setCount(count);
-//   choosethrone()
-//    //handleBestscore()
-//   return
-// } else {
-//   console.log("yes it is working ")
-//   gameOver()
-//   return
-// }
-
-
-// if (clicked !== true) {
-
-//   setclicked(true)
-
-//   console.log("plese work")
-//         count++ ;
-//       setCount(count);
-//       choosethrone() 
-//       return
-
-// } 
-//   else {
-//         console.log("yes it is working ")
-//       gameOver()
-//       return
-// }
   
   }
 
@@ -96,8 +61,10 @@ const App = () => {
      }
 
      const gameOver = () => {
+
+      console.log(`i can make the game end`)
       handleBestscore()
-      choosethrone()
+      // choosethrone()
     }
 
 
@@ -109,13 +76,12 @@ return (
     count = {count}
     prevScore = {prevScore}/>
 
-
     {thrones.map(throne => (
     <ThroneFile
     id = {throne.id}
     key = {throne.id}
     image = {throne.image}
-    clicked = {throne.clicked}
+    name = {throne.name}
     choosethrone = {choosethrone}
     handleClickItem = {handleClickItem}
     handleBestscore = {handleBestscore}

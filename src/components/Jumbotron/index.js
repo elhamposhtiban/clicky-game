@@ -6,6 +6,7 @@ import  "./jumbotron.css";
 const propType = {
 
   id: PropType.number.isRequired,
+  name: PropType.string.isRequired,
   count: PropType.string.isRequired,
   prevScore: PropType.string.isRequired
 
@@ -16,15 +17,15 @@ const propType = {
 const Jumbotron = ({
 
   count,
+  name,
   prevScore
 })=> {
   return (
   <div className="jumbotron">
-      <h1 className="display-4">Welcome to Clicky game!</h1>
-      <h2 className="lead"> YOUR BEST SCORE IS  : {prevScore} </h2>
-  <h2 className="lead">  YOUR CURRENT SCORE IS  : {count} </h2>
+      <h1 className="display-4 title">Welcome to Clicky game!</h1>
       <hr className="my-4"/>
-      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+      <h1 className="lead second-title"> YOUR BEST SCORE IS  : {prevScore} </h1>
+      <h1 className="lead second-title">  YOUR CURRENT SCORE IS  : {count} </h1>
   </div>
   )
 }
