@@ -13,7 +13,7 @@ const App = () => {
   const [thrones, setthrones] = useState(throneData);
   let [count, setCount] = useState(0);
   let [prevScore, setprevScore] = useState(0);
-  const [lastId, setlastId] = useState();
+  const [lastId, setlastId] = useState([]);
   const [clicked, setclicked] = useState(false)
 
 // on click function which handle increasing score and random characters 
@@ -21,18 +21,24 @@ const App = () => {
  
     console.log(`the ID is ${id}`)
 
-    if (id!==lastId) {
-       setlastId(id);
-      console.log (`this is a result of ${(id!==lastId)}`)
-      count++ ;
-      setCount(count);
-      choosethrone()
-       //handleBestscore()
-      return
-    } else {
+    setlastId(id);
+    
+    if (thrones.includes(lastId)) {
+
       console.log("yes it is working ")
       gameOver()
       return
+
+    } else {
+
+      lastId.push(id);
+      console.log("hi i can read this")
+      // console.log (`this is a result of ${(!(thrones.includes(lastId)))}`)
+      count++ ;
+      setCount(count);
+      choosethrone()
+      return
+    
     }
 
 //     if (thrones.includes(id)) {
