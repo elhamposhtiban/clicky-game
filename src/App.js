@@ -14,25 +14,60 @@ const App = () => {
   let [count, setCount] = useState(0);
   let [prevScore, setprevScore] = useState(0);
   const [lastId, setlastId] = useState();
+  const [clicked, setclicked] = useState(false)
 
 // on click function which handle increasing score and random characters 
-  const handleCount = (id) =>  {
+  const handleClickItem = (id) =>  {
+ 
+    console.log(`the ID is ${id}`)
 
-
-      console.log(`ID ${id}`)
-
-    if (id !== lastId) {
-      setlastId(id);
-      console.log ((id !== lastId))
+    if (id!==lastId) {
+       setlastId(id);
+      console.log (`this is a result of ${(id!==lastId)}`)
       count++ ;
       setCount(count);
       choosethrone()
-      handleBestscore()
+       //handleBestscore()
       return
     } else {
       console.log("yes it is working ")
+      gameOver()
+      return
     }
-   
+
+//     if (thrones.includes(id)) {
+//   console.log(`ID ${id}`)
+//   const result = !((thrones.includes(id)))
+//   console.log (`this is a result of ${result}`)
+//   count++ ;
+//   setCount(count);
+//   choosethrone()
+//    //handleBestscore()
+//   return
+// } else {
+//   console.log("yes it is working ")
+//   gameOver()
+//   return
+// }
+
+
+// if (clicked !== true) {
+
+//   setclicked(true)
+
+//   console.log("plese work")
+//         count++ ;
+//       setCount(count);
+//       choosethrone() 
+//       return
+
+// } 
+//   else {
+//         console.log("yes it is working ")
+//       gameOver()
+//       return
+// }
+  
   }
 
    const choosethrone = () => {
@@ -42,7 +77,7 @@ const App = () => {
      }
 
      const handleBestscore = () => {
-       
+
        const currentScore = count;
        console.log (`this is current score ${currentScore}`)
        let  newBestScore = 0;
@@ -56,6 +91,11 @@ const App = () => {
         setprevScore(newBestScore);
        }
      }
+
+     const gameOver = () => {
+      handleBestscore()
+      choosethrone()
+    }
 
 
 
@@ -72,9 +112,11 @@ return (
     id = {throne.id}
     key = {throne.id}
     image = {throne.image}
+    clicked = {throne.clicked}
     choosethrone = {choosethrone}
-    handleCount = {handleCount}
+    handleClickItem = {handleClickItem}
     handleBestscore = {handleBestscore}
+    gameOver = {gameOver}
     />
     ))}
 
@@ -83,6 +125,8 @@ return (
 }
 
 export default App;
+
+
 
 
 
