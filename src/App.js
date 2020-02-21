@@ -21,9 +21,7 @@ const App = () => {
  
     console.log(`the ID is ${id}`)
 
-    setlastId(id);
-    
-    if (thrones.includes(lastId)) {
+    if (lastId.includes(id)) {
 
       console.log("yes it is working ")
       gameOver()
@@ -31,9 +29,8 @@ const App = () => {
 
     } else {
 
-      lastId.push(id);
+      setlastId([...lastId, id])
       console.log("hi i can read this")
-      // console.log (`this is a result of ${(!(thrones.includes(lastId)))}`)
       count++ ;
       setCount(count);
       choosethrone()
