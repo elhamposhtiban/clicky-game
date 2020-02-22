@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Shake } from 'reshake'
 import throneData from "./throne.json";
 import ThroneFile from "./components/ThroneFile";
 import Wrapper from "./components/Wrapper";
@@ -11,6 +12,7 @@ const App = () => {
   let [count, setCount] = useState(0);
   let [prevScore, setprevScore] = useState(0);
   const [lastId, setlastId] = useState([]);
+   const [shakeNow, setShakeNow] = useState(false)
 
 
 // on click function which handle increasing score and random characters 
@@ -21,14 +23,18 @@ const App = () => {
     if (lastId.includes(id)) {
 
       console.log("yes it is working ")
+       handleShake(true)
+       gameOver()
+     
+       return 
       
-      return gameOver()
 
     } else {
 
       setlastId([...lastId, id])
       console.log("hi i can read this")
       count++ ;
+      handleShake(false)
       setCount(count);
       choosethrone()
       return
@@ -36,6 +42,12 @@ const App = () => {
     }
 
   
+  }
+
+  //handle shake function 
+  const handleShake = (value) => {
+    setShakeNow(value)
+
   }
 
    const choosethrone = () => {
@@ -64,18 +76,19 @@ const App = () => {
 
       console.log(`i can make the game end`)
       handleBestscore()
+      window.location.reload(true);
       // choosethrone()
     }
 
 
 
 return (
-  
+  <Shake active={shakeNow}>
   <Wrapper>
     <Jumbotron
     count = {count}
     prevScore = {prevScore}/>
-
+  
     {thrones.map(throne => (
     <ThroneFile
     id = {throne.id}
@@ -88,17 +101,13 @@ return (
     gameOver = {gameOver}
     />
     ))}
-
+  
   </Wrapper>
+  </Shake>
 )
 }
 
 export default App;
-
-
-
-
-
 
 
 
