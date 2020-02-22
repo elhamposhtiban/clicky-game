@@ -4,6 +4,7 @@ import throneData from "./throne.json";
 import ThroneFile from "./components/ThroneFile";
 import Wrapper from "./components/Wrapper";
 import Jumbotron from "./components/Jumbotron";
+//import Navbar from "./components/Navbar";
 
 
 const App = () => {
@@ -12,7 +13,7 @@ const App = () => {
   let [count, setCount] = useState(0);
   let [prevScore, setprevScore] = useState(0);
   const [lastId, setlastId] = useState([]);
-   const [shakeNow, setShakeNow] = useState(false)
+  const [shakeNow, setShakeNow] = useState(false)
 
 
 // on click function which handle increasing score and random characters 
@@ -28,7 +29,6 @@ const App = () => {
      
        return 
       
-
     } else {
 
       setlastId([...lastId, id])
@@ -38,9 +38,7 @@ const App = () => {
       setCount(count);
       choosethrone()
       return
-    
     }
-
   
   }
 
@@ -75,20 +73,18 @@ const App = () => {
      const gameOver = () => {
 
       console.log(`i can make the game end`)
+      setTimeout(function(){ window.location.reload(true)}, 2000);
       handleBestscore()
-      window.location.reload(true);
-      // choosethrone()
     }
-
-
 
 return (
   <Shake active={shakeNow}>
-  <Wrapper>
+  <Wrapper> 
+    
     <Jumbotron
     count = {count}
     prevScore = {prevScore}/>
-  
+
     {thrones.map(throne => (
     <ThroneFile
     id = {throne.id}

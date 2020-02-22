@@ -21,11 +21,12 @@ const Jumbotron = ({
   prevScore
 })=> {
   return (
-  <div className="jumbotron">
-      <h1 className="display-4 title">Welcome to Clicky game!</h1>
+  <div className="jumbotron mt-4">
+      <h1 className="display-4 title">Welcome to Thrones game!</h1>
       <hr className="my-4"/>
-      <h1 className="lead second-title"> YOUR BEST SCORE IS  : {prevScore} </h1>
-      <h1 className="lead second-title">  YOUR CURRENT SCORE IS  : {count} </h1>
+      <h1 className="lead third-title"> let see who will sit on the iron throne...</h1>
+      <h1 className="lead second-title"> YOUR BEST SCORE : {prevScore} </h1>
+      <h1 className="lead second-title">  YOUR  SCORE : {count} </h1>
   </div>
   )
 }
