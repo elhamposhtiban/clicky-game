@@ -18,3 +18,11 @@
   .card > .img-container > img {
     width: 100%
   }
+
+  .image-btn:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 1rem 8rem rgba(0, 0, 0, 0.2); }
+    
+  .image-btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }

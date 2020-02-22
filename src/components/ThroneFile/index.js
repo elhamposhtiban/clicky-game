@@ -22,7 +22,7 @@ handleClickItem,
  }) => ( 
 
 
- <div className="card">
+ <div className="card image-btn">
 
      <div className= "img-fluid img-thumbnail img-container">
      <img src = {image} alt = {name} onClick={()=> handleClickItem(id)} className="btn"/> 
