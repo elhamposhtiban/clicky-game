@@ -4,7 +4,7 @@ import throneData from "./throne.json";
 import ThroneFile from "./components/ThroneFile";
 import Wrapper from "./components/Wrapper";
 import Jumbotron from "./components/Jumbotron";
-//import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar";
 
 
 const App = () => {
@@ -79,12 +79,13 @@ const App = () => {
 
 return (
   <Shake active={shakeNow}>
+      <Navbar
+          count = {count}
+          prevScore = {prevScore}/>
   <Wrapper> 
-    
     <Jumbotron
     count = {count}
     prevScore = {prevScore}/>
-
     {thrones.map(throne => (
     <ThroneFile
     id = {throne.id}
@@ -97,7 +98,6 @@ return (
     gameOver = {gameOver}
     />
     ))}
-  
   </Wrapper>
   </Shake>
 )

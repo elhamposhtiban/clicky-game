@@ -2,7 +2,7 @@
 import React from "react";
 import PropType from "prop-types";
 import  "./throne.css"
-import Jumbotron from "../Jumbotron";
+
 
 
 const propType = {
@@ -13,6 +13,7 @@ const propType = {
     choosethrone:PropType.func.isRequired,
     handleClickItem: PropType.func.isRequired,
 }
+
 
  const ThroneFile = ({
 id,
