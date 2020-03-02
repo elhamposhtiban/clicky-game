@@ -5,7 +5,7 @@ Thrones game is an interesting game which if you click on one character twice yo
 
 ## Deployment
 
- [link] (https://cranky-noyce-6bf6c7.netlify.com/)
+[ Link](https://cranky-noyce-6bf6c7.netlify.com/) 
 
  ## Built With
 
