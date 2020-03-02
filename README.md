@@ -1,6 +1,6 @@
 # Boogle
 
-Thrones game is an interesting game which if you click on one character twice you be loosing the game and the hieghest score that you can get is 16.
+Thrones game is an interesting game which if you click on one character twice you be losing the game and the highest score that you can get is 16.
 
 
 ## Deployment
