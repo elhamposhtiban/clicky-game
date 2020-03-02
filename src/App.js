@@ -108,3 +108,73 @@ export default App;
 
 
 
+
+
+
+// const  handleFormSubmit = event => {
+
+//   console.log(`heey i am reding this part`)
+//   event.preventDefault();
+//   if (setTitle[title] || setAthor[author]) {
+//     API.searchBook(
+//       setTitle[title] + setAthor[author]
+//     )
+//       .then(res => {
+
+//         let newArray = [];
+//         books.data.items.map(book => {
+//           return {
+//             title: book.volumeInfo.title,
+//             authors: book.volumeInfo.authors,
+//             description: book.volumeInfo.description,
+//             image: book.volumeInfo.imageLinks,
+//             link: book.volumeInfo.previewLink,
+//           }
+//         }).push = newArray;
+//         setBooks[newArray];
+//       })
+//       .catch((err) => console.log(err));
+//   }
+// };
+
+// return (
+//   <Container fluid>
+//     <Row>
+//       <Col size="md-12">
+//         <form>
+//           <SearchInput
+//             value={title}
+//             handleInputChange = {handleInputChange}
+//           />
+//           <FormBtn
+//             handleFormSubmit = {handleFormSubmit}
+//           >
+//             Search
+//           </FormBtn>
+//         </form>
+//       </Col>
+//       <Col size="md-12">
+//         {Books.length ? (
+//           <Col
+//             size="md-12"
+//           >
+//             {books.map(book => (
+//               <BookResult
+//                 book={book}
+//                 search={true}
+//               ></BookResult>
+//             ))}
+//           </Col>
+//         ) : (
+//             <h3>No Results to Display</h3>
+//           )}
+//       </Col>
+//     </Row>
+//   </Container>
+// );
+
+
+
+
+
+
