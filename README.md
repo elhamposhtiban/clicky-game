@@ -18,7 +18,7 @@ Local Use
 
 ## Animated Gifs/Pictures of App
 
- ![Application](/client/src/assets/images/game.gif)
+ ![Application](/src/assets/images/game.gif)
 
  ## Built With
 
